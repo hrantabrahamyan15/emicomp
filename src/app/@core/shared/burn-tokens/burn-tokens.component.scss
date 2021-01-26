@@ -1,0 +1,76 @@
+.green_button_gradient {
+}
+.disabled {
+  background: linear-gradient(90deg, #575658 0%, #3d3d40 33.33%, #6b6b6d 68.75%, #939695 99.99%) !important;
+  border: none;
+}
+
+.input-group-append {
+  padding-left: 0;
+  flex-basis: 100%;
+  justify-content: center;
+  padding-top: 10px;
+}
+.box {
+  padding: 20px 0;
+
+  button {
+    width: 100%;
+    padding: 19px;
+  }
+
+  .btn-step {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 20px 0;
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: justify;
+    }
+  }
+}
+
+:host::ng-deep {
+  .mat-form-field {
+    width: 100%;
+
+    .mat-form-field-suffix {
+      margin: auto 0 auto 0;
+      padding: 0 0 0 10px;
+
+      a {
+        color: #141717;
+        cursor: pointer;
+        background-color: #FFD541;
+        padding: 15px 20px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .mat-spinner{
+    svg {
+      circle {
+        stroke: #FFD541;
+      }
+    }
+  }
+
+  .mat-progress-bar {
+    .mat-progress-bar-background {
+      fill: #ffd54100;
+    }
+
+    .mat-progress-bar-buffer {
+      background-color: #ffd5414d;
+    }
+
+    .mat-progress-bar-fill {
+      &:after {
+        background-color: #FFD541;
+      }
+    }
+  }
+}

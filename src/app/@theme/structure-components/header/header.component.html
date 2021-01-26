@@ -1,0 +1,115 @@
+<div  class="container-fluid">
+  <div class="row">
+    <div class="col-xl-4 logo_box">
+
+        <div class="compound">
+          <a routerLink="/">
+            <img src="/assets/img/logo_header.svg" alt="">
+          </a>
+        </div>
+<!--        <img class="c-logo" src="/assets/img/logo_gradient2.png" alt="">-->
+
+    </div>
+    <div class="col-xl-8 slog">
+      <app-statistics></app-statistics>
+
+
+
+      <div class="right_box">
+        <a [matMenuTriggerFor]="menuAccount" class="menu"><img alt="" src="/assets/img/profile_ico.svg"></a>
+        <mat-menu #menuAccount="matMenu">
+          <button mat-menu-item (click)="openDashboard()">
+            <span>{{'header.dashboard' | translate}}</span>
+          </button>
+          <button mat-menu-item (click)="openSignupDialog()">
+            <span>{{'header.registration' | translate}}</span>
+          </button>
+          <button mat-menu-item (click)="openAuthDialog()">
+            <span>{{'header.change_account' | translate}}</span>
+          </button>
+        </mat-menu>
+        <ngx-languages-box></ngx-languages-box>
+
+        <button class="connect" (click)="connectMetamask()">{{ connectStatus }}</button>
+
+<!--        <a *ngIf="authService?.user?.email && authService?.user?.email_confirmed == true" class="email">{{authService.user.email}}</a>-->
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<ng-template #teamTemplate>
+  <h2 mat-dialog-title [innerHTML]="'header.team' | translate"></h2>
+  <mat-dialog-content>
+    <div class="container team">
+      <div class="row">
+        <div class="col-xl-12">
+          <mat-tab-group [disableRipple]="true">
+            <mat-tab label="{{'header.team' | translate}}">
+              <div class="tab_box">
+                <ul class="team">
+                  <li>
+                    <img src="/assets/img/andrey.png" alt="">
+                    <div class="head">
+                      <strong>{{'team.andrey' | translate}}</strong>
+                      <span>{{'team.dev1' | translate}}</span>
+                    </div>
+                    <div class="text" [innerHTML]="'team.us2' | translate">
+                    </div>
+                  </li>
+                  <li>
+                    <img src="/assets/img/dima.png" alt="">
+                    <div class="head">
+                      <strong>{{'team.dima' | translate}}</strong>
+                      <span>{{'team.dev2' | translate}}</span>
+                    </div>
+                    <div class="text" [innerHTML]="'team.us3' | translate">
+                    </div>
+
+                  </li>
+                  <li>
+                    <img src="/assets/img/fedja.jpg" alt="">
+                    <div class="head">
+                      <strong>{{'team.fedja' | translate}}</strong>
+                      <span>{{'team.dev3' | translate}}</span>
+                    </div>
+                    <div class="text" [innerHTML]="'team.us4' | translate">
+                      {{'team.us4' | translate}}
+                    </div>
+                  </li>
+                  <li>
+                    <img src="/assets/img/bugaev.jpg" alt="">
+                    <div class="head">
+                      <strong>{{'team.ilya' | translate}}</strong>
+                      <span>{{'team.dev4' | translate}}</span>
+                    </div>
+                    <div class="text" [innerHTML]="'team.us5' | translate">
+                    </div>
+                  </li>
+                  <li>
+                    <img src="/assets/img/dima_smart.jpg" alt="">
+                    <div class="head">
+                      <strong>{{'team.dima2' | translate}}</strong>
+                      <span>{{'team.dev2' | translate}}</span>
+                    </div>
+                    <div class="text" [innerHTML]="'team.us6' | translate">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+    </div>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>{{'close' | translate}}</button>
+  </mat-dialog-actions>
+</ng-template>

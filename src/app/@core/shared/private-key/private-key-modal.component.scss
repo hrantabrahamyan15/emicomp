@@ -1,0 +1,10 @@
+:host::ng-deep {
+  button.mat-primary {
+    background-color: #FFD541;
+    color: #000000;
+
+    .mat-button-focus-overlay {
+      background-color: transparent;
+    }
+  }
+}

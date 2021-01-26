@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>{{'auth.modal_title' | translate}}</h2>
+<mat-dialog-content>
+  <div class="box">
+    <div class="input-group">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'auth.email' | translate}}</mat-label>
+        <input matInput [(ngModel)]="email" class="get-input" type="email" [disabled]="data.email ? true : false">
+      </mat-form-field>
+    </div>
+    <div class="input-group">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'auth.password' | translate}}</mat-label>
+        <input matInput [(ngModel)]="password" class="get-input" type="password">
+      </mat-form-field>
+    </div>
+    <div class="input-group" *ngIf="type==='reg'">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'auth.repeat_password' | translate}}</mat-label>
+        <input matInput [(ngModel)]="repeatpassword" class="get-input" type="password">
+      </mat-form-field>
+    </div>
+    <div class="input-group">
+      <div class="input-group-append" *ngIf="type==='auth'">
+        <button (click)="auth()" class="bt_custom orange">{{ 'auth.btn_auth' | translate }}</button>
+      </div>
+      <div class="input-group-append" *ngIf="type==='reg'">
+        <button (click)="reg()" class="bt_custom orange">{{ 'auth.btn_reg' | translate }}</button>
+      </div>
+    </div>
+    <div class="input-group">
+      <div class="input-group-append" *ngIf="type==='auth'">
+        <a style="cursor: pointer;" (click)="recover()">{{ 'auth.recover_password' | translate }}</a>
+      </div>
+    </div>
+    <div *ngIf="error" style="color: red; max-width: 200px; text-align: center;">{{error}}</div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{'close' | translate}}</button>
+</mat-dialog-actions>

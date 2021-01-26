@@ -1,0 +1,116 @@
+<div class="other_bg_box">
+
+
+<div class="container">
+  <div class="row otherPage">
+
+    <div class="col-xl-12" >
+      <div class="data_title" *ngIf="web3?.getAccount()">
+        <div>
+          <img src="/assets/img/wallet_user_logo.svg" alt="">
+        </div>
+        <div>
+          <a *ngIf="web3?.getAccount()" href="https://etherscan.io/address/{{web3?.getAccount()}}" target="_blank">{{web3?.getAccount()}}</a>
+        </div>
+      </div>
+
+      <div class="data_list">
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="box_item">
+              <div class="item">
+                <div class="head">
+                  <strong>{{'account_page.total_balance' | translate}} </strong>
+                </div>
+
+                <span class="main_num" *ngIf="isBalanceLoaded()">{{ (tokenInfo?.balance) | number:'.0-8' }} DAI</span>
+                <span class="main_num" *ngIf="!isBalanceLoaded()">
+                  <mat-spinner [diameter]="27" class="md-warn md-hue-3"></mat-spinner>
+                </span>
+
+                <ul>
+                  <li>
+                    {{'account_page.expected_profit' | translate}}<img src="/assets/img/question_green.svg" matTooltip="{{ 'account_page.expected_profit_tooltip' | translate }}" matTooltipPosition="above"> <span>{{profitInfo?.pendingUserProfit || 0 |  number:'.0-8'}} DAI</span>
+                  </li>
+                  <li>
+                    {{ 'account_page.available_profit' | translate }}<img src="/assets/img/question_green.svg" matTooltip="{{ 'account_page.available_profit_tooltip' | translate }}" matTooltipPosition="above"> <span>{{ profitInfo?.daiProfit | number:'.0-8' }}&nbsp;DAI{{profitInfo?.usdProfit > 0 ? ' + ' : ''}}{{ (profitInfo?.usdProfit > 0 ? profitInfo?.usdProfit : '') | number:'.0-5'}}{{profitInfo?.usdProfit > 0 ? ' USDT' : ''}}</span>
+                  </li>
+                  <li>{{'account_page.derived_profit' | translate}}<img src="/assets/img/question_green.svg" matTooltip="{{ 'account_page.derived_profit_tooltip' | translate }}" matTooltipPosition="above">
+                    <span><a class="bt_custom" [routerLink]="[]" *ngIf="!recvProfit && recvProfit !== 0" (click)="calcRecvProfit()">Click to show</a></span>
+                    <span *ngIf="recvProfit || recvProfit === 0">{{recvProfit | number : '.0-5'}}&nbsp;USDT</span>
+                  </li>
+                </ul>
+
+                <div class="buttons-panel">
+                  <button *ngIf="tokenInfo?.balance > 0" (click)="callBuyTokensModal()" class="bt_custom orange half-size" >{{'account_page.buy_tokens' | translate}} </button>
+                  <button  class="bt_custom outline half-size" *ngIf="tokenInfo?.balance > 0" (click)="withdrawTokens()">
+                    {{'account_page.get_out_tokens' | translate}}
+                  </button>
+
+
+                  <button *ngIf="tokenInfo?.balance == 0" (click)="callBuyTokensModal()" class="bt_custom orange"  >{{'account_page.buy_tokens' | translate}} </button>
+                </div>
+
+
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="box_item">
+              <div class="item">
+
+                <div class="head">
+                  <strong>{{'account_page.stat_label3' | translate}} <i> APY {{authService.stats?.data?.currentAPY | number : '.0-1'}}%</i></strong>
+                </div>
+                <span class="main_num">{{ profitInfo?.daiProfit + profitInfo?.pendingUserProfit  | number:'.0-5' }}&nbsp;DAI{{ (profitInfo?.usdProfit > 0 ? ' +' + profitInfo?.usdProfit + '&nbsp;USDT' : '') | number:'.0-5'}}</span>
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+
+                <div class="buttons-panel">
+                  <!-- Вывести прибыль-->
+                  <button *ngIf="profitInfo?.usdProfit + profitInfo?.pendingUserProfit > 0" class="bt_custom outline" (click)="claimProfit()"><span>{{'account_page.withdraw_profit' | translate}} </span></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<ng-template #referalModal>
+  <div class="modal-title">
+    <h2 mat-dialog-title [innerHTML]="'Referral Program' | translate"></h2>
+    <button mat-dialog-close><img src="/assets/img/close.svg" alt=""></button>
+  </div>
+  <mat-dialog-content>
+    <div class="referal_box">
+      Access to the referral program is available to users who have <br> confirmed their email and provided a password.
+    </div>
+  </mat-dialog-content>
+  <div class="modal-btns input-group text-center">
+    <button mat-dialog-close class="bt_custom orange">{{'ok' | translate}}</button>
+  </div>
+
+</ng-template>
+
+
+

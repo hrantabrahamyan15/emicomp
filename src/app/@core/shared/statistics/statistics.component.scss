@@ -1,0 +1,276 @@
+
+:host {
+  display: block;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 32px;
+  margin-right: 32px;
+}
+
+.statistic_box {
+
+}
+.stat {
+  display: flex;
+  justify-content: space-between;
+}
+.item {
+  margin-right: 40px;
+  &.pre {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  a{
+    color: #fff;
+  }
+  span {
+    display: block;
+    padding-bottom: 4px;
+    font-size: 14px;
+    line-height: 21px;
+    padding-left: 34px;
+  }
+  strong {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    display: flex;
+    color: #fff;
+    font-family: 'IBM Plex Sans', sans-serif;
+    img {
+      margin-right: 10px;
+    }
+  }
+  .view {
+    display: block;
+    padding: 3px 0 0 0;
+  }
+  .proof {
+    display: block;
+    padding: 10px 0 0 0;
+    font-size: 16px;
+  }
+  &.red {
+    margin-right: 0;
+    strong {
+      color: #EB5757;
+    }
+  }
+  div.menu {
+    text-align: center;
+    margin: auto;
+
+    a {
+      display: block;
+      width: 100%;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  //&:first-child {
+  //  width: 32%;
+  //}
+  //
+  //&:nth-child(2) {
+  //  width: 28%;
+  //}
+  //
+  //&:nth-child(3) {
+  //  width: 28%;
+  //}
+
+  &:last-child {
+    display: grid;
+    margin: auto;
+    //width: 12%;
+  }
+}
+
+
+
+:host::ng-deep {
+
+  .flex_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+  }
+
+  .left_part {
+    padding: 10px 0 10px 30px;
+    display: flex;
+    .head {
+      font-size: 20px;
+      align-self: center;
+    }
+    .real {
+      font-family: 'Digital-7 Mono', sans-serif;
+      font-size: 43px;
+      display: flex;
+      font-weight: normal;
+      span {
+        padding: 10px 3px;
+        background: #fff;
+        border-radius: 3px;
+        margin-right: 3px;
+        align-self: center;
+      }
+    }
+    .num {
+      display: flex;
+      align-items: center;
+      width: 120%;
+      padding-left: 10px;
+      i {
+        font-size: 43px;
+        font-style: normal;
+        margin: 0 30px 0 7px;
+      }
+
+      .light_grey {
+      }
+    }
+  }
+
+  .right_part {
+    padding: 10px 0 10px 10px;
+    .head {
+      font-size: 20px;
+      align-self: center;
+      text-align: center;
+      padding: 0 0 10px 0;
+    }
+
+    .num {
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 43px;
+        font-style: normal;
+        margin: 0 7px 0 7px;
+      }
+    }
+
+    .count {
+      font-family: 'Digital-7 Mono', sans-serif;
+      font-size: 43px;
+      display: flex;
+      font-weight: normal;
+      span {
+        padding: 10px 3px;
+        background: #fff;
+        border-radius: 3px;
+        margin-right: 3px;
+        align-self: center;
+      }
+    }
+  }
+}
+
+
+@media all and (max-width: 1199px) {
+  :host {
+  //  margin-right: 0;
+  }
+
+  .item {
+    margin-right: 20px;
+    strong {
+      font-size: 20px;
+      line-height: normal;
+    }
+  }
+}
+
+:host::ng-deep {
+  @media all and (max-width: 1199px) {
+    .flex_box {
+      flex-flow: column;
+    }
+
+    .stat {
+      flex-flow: wrap;
+    }
+    .item {
+      margin-bottom: 15px;
+      text-align: center;
+
+      strong {
+        justify-content: center;
+      }
+    }
+
+    .head {
+      padding-bottom: 12px;
+    }
+
+
+    .left_part {
+      text-align: center;
+      flex-flow: column;
+      padding-left: 0;
+      padding-bottom: 20px;
+
+      .num {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: auto;
+        padding-left: 0;
+        span {
+          flex-basis: 100%;
+          padding-top: 10px;
+        }
+      }
+
+    }
+    .right_part {
+      text-align: center;
+      padding: 0;
+      padding-bottom: 20px;
+      flex-flow: column;
+
+      .num {
+        justify-content: center;
+        i {
+          font-size: 30px;
+          margin: 0;
+        }
+      }
+
+      .count {
+        font-size: 40px;
+
+        span {
+          margin-right: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  :host {
+    margin-right: 0;
+    padding-right: 0;
+    border: none;
+    padding-bottom: 20px;
+  }
+  .stat {
+    flex-flow: column;
+  }
+
+  .item {
+    width: 100%!important;
+    margin-right: 0;
+
+    span {
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+:host::ng-deep {
+  button.mat-raised-button {
+    background-color: #FFD541;
+    color: #000000;
+
+    .mat-button-focus-overlay {
+      background-color: transparent;
+    }
+  }
+
+  nb-card {
+    max-width: 600px;
+    max-height: 500px;
+  }
+}

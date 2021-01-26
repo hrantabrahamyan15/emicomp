@@ -1,0 +1,480 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import '~ngx-toastr/toastr';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$client-primary: mat-palette($mat-indigo);
+$client-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$client-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$client-theme: mat-light-theme((
+  color: (
+    primary: $client-primary,
+    accent: $client-accent,
+    warn: $client-warn,
+  )
+));
+
+$text_color_black: #24272C;
+$text_color_grey: #555959;
+$text_color_lightgrey: #89919A;
+
+$accent_orange: #FFD541;
+$accent_green: #11B382;
+$accent_red: #E85E59;
+
+$bg_black: #263434;
+$bg_white: #FFFFFF;
+$bg_grey: #EAEEEE;
+
+$border1: 1px solid #DBDEDE;
+$border2: 1px solid #EAEEEE;
+
+
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($client-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+//body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: #f7f8fa; }
+body { margin: 0; font-family: 'Roboto', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important; background: #f4f6f6; }
+.mat-form-field, .mat-tab-labels, .mat-tab-label, .mat-tab-link, .mat-tab-group, .mat-dialog-title, h4, h3, .mat-button-wrapper, .mat-checkbox { font-family: 'Roboto', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;  }
+
+
+
+.main-column {
+
+}
+
+.text_light_grey {
+  color: $text_color_lightgrey;
+}
+
+
+.mat-typography {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.dark_blue {
+  color: #213F9A !important;
+}
+.light_grey {
+  color: #637299 !important;
+}
+.white_color {
+  color: #fff !important;
+}
+.black {
+  color: #000 !important;
+}
+
+.page_title {
+  padding: 30px 0;
+}
+
+
+
+button:focus {
+  outline: none;
+}
+
+strong {
+  font-weight: 500;
+}
+
+
+
+
+
+.link_style {
+  color: #0da14b !important;
+  &:hover {
+    text-decoration: underline !important;
+    color: #0da14b;
+    cursor: pointer;
+  }
+}
+
+.title {
+  font-size: 30px;
+  line-height: 44px;
+  color: #000;
+}
+.other_bg_box {
+  background: url("/assets/img/other_page_bg.svg") no-repeat center top;
+}
+.otherPage {
+  padding: 170px 0 30px;
+}
+
+
+
+.ibm_font {
+  font-family: IBM Plex Sans, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+
+
+
+.bt_custom {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  justify-content: center;
+  padding: 16px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  color: #141717;
+
+
+  &:hover {
+    text-decoration: none;
+    color: #141717;
+  }
+
+
+
+  &.orange {
+    background: #FFD541;
+    &:hover {
+      background: #FFDD66;
+    }
+    &:active {
+      background: #FFD02C;
+    }
+  }
+  &.green {
+    background: #11B382;
+    color: #fff;
+
+    &:hover {
+      background: #0DC890;
+      color: #fff;
+    }
+    &:active {
+      background: #0FAA7B;
+    }
+  }
+  &.outline {
+    border: 1px solid #FFD541;
+    background: #fff;
+    &:hover {
+      background: #FFDD66;
+    }
+    &:active {
+      background: #FFD02C;
+    }
+  }
+  &.outline2 {
+    border: 1px solid #DBDEDE;
+    background: #fff;
+    &:hover {
+      background: #F3F5F5;
+    }
+    &:active {
+      background: #EAEEEE;
+    }
+  }
+  &.white {
+    background: #fff;
+    &:hover {
+      background: #F3F5F5;
+    }
+    &:active {
+      background: #EAEEEE;
+    }
+  }
+  &:disabled {
+    background: #EAEEEE;
+    color: #BFC1C4;
+  }
+}
+
+
+
+div[role=menu] {
+  min-width: auto;
+}
+
+mat-accordion {
+  mat-expansion-panel {
+    box-shadow: none !important;
+
+  }
+}
+
+.mat-expansion-panel {
+  &:first-of-type {
+    border-radius: 10px 10px 0 0 !important;
+  }
+  &:last-of-type {
+    border-radius: 0 0 10px 10px !important;
+  }
+}
+
+
+.main_title {
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 39px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* identical to box height */
+  /* Text / Dark1 */
+
+  color: #24272C;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 64px;
+    height: 2px;
+    /* Colors / Accent Color */
+    top: -33px;
+    background: #FFD541;
+
+  }
+}
+
+
+
+
+
+.mat-form-field-label {
+  font-family: IBM Plex Arabic, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  /* identical to box height */
+  letter-spacing: 0.02em !important;
+}
+.mat-input-element {
+  font-family: IBM Plex Sans, sans-serif !important;
+  font-style: normal !important;
+  font-size: 18px !important;
+  line-height: 23px !important;
+  letter-spacing: 0.02em !important;
+
+  /* Text / Dark1 */
+
+  color: #24272C;
+}
+
+
+
+
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+  background: #FFFFFF;
+  border: 1px solid #DBDEDE;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.mat-form-field-outline {
+  display: none !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 1em 0 1.4em 0;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #b9b9b9;
+}
+
+.modal-btns {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  button {
+    flex: 1;
+  }
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-1.1em) scale(0.75);
+}
+//.mat-form-field-infix {
+//  border-top: 10px solid transparent;
+//}
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0 !important;
+}
+
+
+.languages-menu {
+  position: absolute;
+  left: -20px;
+}
+
+.mat-form-field-infix {
+
+}
+
+
+
+.notify_custom {
+  background: #fff;
+  color: #000;
+  padding: 0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 30px rgba(126, 174, 208, 0.5);
+}
+
+
+
+.ngx-toastr {
+  border-radius: 10px !important;
+  background: #FFFFFF;
+  box-shadow: 0 4px 30px rgba(126, 174, 208, 0.5) !important;
+  color: #000 !important;
+  padding: 20px !important;
+  .toast_box {
+    font-size: 14px;
+    span {
+      display: flex;
+      img {
+        margin-right: 10px;
+      }
+    }
+    strong {
+      display: flex;
+      padding-top: 8px;
+      color: #EB5757;
+      img {
+        margin-right: 13px;
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+.mat-tooltip {
+  font-size: 16px;
+}
+
+
+.spinny {
+  em {
+    //display: flex;
+    //width: 50px;
+    //height: 50px;
+    //position: relative;
+    //justify-content: center;
+    width: 27px;
+    height: 20px;
+    display: block;
+    animation: rotate .5s infinite linear;
+    img {
+    }
+    //&::after {
+    //  content: '';
+    //  position: absolute;
+    //  width: 100%;
+    //  height: 100%;
+    //  background: url("assets/img/spinny_arrows.svg") no-repeat 0 0;
+    //  animation: 1s linear infinite rotate;
+    //}
+  }
+}
+
+
+.mat-dialog-container {
+  box-shadow: 0 0 10px -2px rgba(231, 215, 175, 0.4), 0px 21px 20px -15px rgba(0, 0, 0, 0.3);
+  border-radius: 24px !important;
+}
+.modal-title {
+  display: flex;
+  width: 100%;
+  padding-bottom: 25px;
+  h2 {
+    margin-right: 100px;
+    margin-bottom: 0;
+    font-family: IBM Plex Sans, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: #24272C;
+  }
+  button {
+    margin-left: auto;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+  }
+}
+
+
+@keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {  -webkit-transform:rotate(360deg);}
+}
+
+@media all and (max-width: 1199px) {
+  body {
+    overflow-x: hidden;
+  }
+  .main-column {
+  //  margin-top: 147px;
+  }
+}
+@media all and (max-width: 768px) {
+  .main-column {
+ //   margin-top: 30px;
+  }
+
+  .otherPage {
+    padding: 30px 0 30px;
+  }
+}
+
+@media all and (max-width: 414px) {
+  .main-column {
+    margin-top: 0;
+  }
+
+
+}
+
+
+
+

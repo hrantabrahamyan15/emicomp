@@ -1,0 +1,23 @@
+<app-header (window:scroll)="onScroll($event)" [class.offset]="isFixed" #header></app-header>
+
+<div class="stick-panel">
+  <div class="metamask-msg" *ngIf="web3?.isMetamaskDoNotExist && viewMetamaskMsg">
+    <p>
+      {{ 'errors.metamask_info_panel_text1' | translate }}
+    </p>
+    <img src="/assets/img/metamask.svg" alt="">
+    <button class="bt_custom orange half-size" (click)="viewMetamaskInfo()">{{ 'more_details' | translate }}</button>
+  </div>
+</div>
+
+<main class="main-column">
+    <ng-content select="router-outlet"></ng-content>
+</main>
+<app-footer></app-footer>
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  padding-right: 15px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  img {
+    width: 30px;
+  }
+}
+
+.mat-menu-trigger {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  margin: auto;
+}
+
+:host ::ng-deep {
+  .languages-menu {
+    background: red;
+  }
+}
+
+button {
+  font-weight: 500;
+  color: #fff;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+
+@media all and (max-width: 1199px) {
+  :host {
+    margin-top: 0;
+  }
+}
+
+
+

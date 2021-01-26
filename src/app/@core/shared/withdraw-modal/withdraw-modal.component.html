@@ -1,0 +1,38 @@
+<div class="modal-title">
+  <h2 mat-dialog-title [innerHTML]="'withdraw_promo.request_profit' | translate"></h2>
+  <button mat-dialog-close><img src="/assets/img/close.svg" alt=""></button>
+</div>
+
+<div class="box">
+
+  <img style="display:block; margin: auto;" src="/assets/img/request_profit_ico.svg" alt="">
+
+  <div class="additional">
+
+      <div class="line" [innerHTML]="showRealProfitInfo()"></div>
+      <div class="pre" [innerHTML]="showRealProfitInfo2()"></div>
+      <div class="input-group text-center" style="padding: 20px 0 0 0; justify-content: center;" *ngIf="(profit?.usdProfit > 0 || profit?.daiProfit > 0) && !realWithdrawInProcess">
+        <button *ngIf="work?.status == 'done'" (click)="withdrawRealOptimized('withdraw')" class="bt_custom orange half-size">{{'withdraw_promo.withdraw_real_profit' | translate}}</button>
+
+        <div *ngIf="work?.status == 'pending'" class="text-center" style="width: 100%; padding: 10px;">
+          <div style="margin: 0 0 10px 0;">
+            <a target="_blank" href="https://etherscan.io/tx/{{work?.hash}}">{{work?.description}}</a>
+          </div>
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+      </div>
+      <div style="color: red;" class="text-center pt-2" *ngIf="errorRealWithdraw">
+        {{errorRealWithdraw}}
+      </div>
+  </div>
+
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{'close' | translate}}</button>
+</mat-dialog-actions>
+
+
+</div>
+
+
+

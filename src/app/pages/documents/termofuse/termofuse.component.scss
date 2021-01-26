@@ -1,0 +1,41 @@
+:host::ng-deep {
+  .c-form {
+
+    div {
+      padding-bottom: 15px;
+      span {
+        font-size: 20px;
+        display: block;
+        padding-bottom: 8px;
+      }
+      p {
+        color: #565656;
+      }
+    }
+  }
+
+
+  header {
+    font-size: 25px;
+  }
+  p {
+    strong {
+      font-size: 20px;
+    }
+  }
+  ul {
+    padding-top: 10px;
+    list-style: none;
+    margin-bottom: 26px;
+    li {
+      line-height: 25px;
+      padding-bottom: 7px;
+    }
+    ul {
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+

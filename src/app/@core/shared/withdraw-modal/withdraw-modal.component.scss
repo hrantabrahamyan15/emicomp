@@ -1,0 +1,135 @@
+.box {
+  max-width: 525px;
+
+  .additional {
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.input-group-append {
+  flex-basis: 100%;
+  padding-top: 10px;
+  justify-content: center;
+}
+
+:host::ng-deep {
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .promo-panel{
+    .slog {
+      border: none;
+      padding: 10px;
+      span {
+        margin-top: 10px;
+        letter-spacing: normal;
+
+        a {
+          color: #2a70b9;
+        }
+      }
+    }
+  }
+
+  .mat-spinner{
+    svg {
+      circle {
+        stroke: #FFD541;
+      }
+    }
+  }
+
+  .mat-progress-bar {
+    .mat-progress-bar-background {
+      fill: #ffd54100;
+    }
+
+    .mat-progress-bar-buffer {
+      background-color: #ffd5414d;
+    }
+
+    .mat-progress-bar-fill {
+      &:after {
+        background-color: #FFD541;
+      }
+    }
+  }
+}
+
+
+.req_address {
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 0;
+  span {
+    display: block;
+    font-size: 18px;
+    word-break: break-all;
+  }
+}
+
+
+.stat {
+  font-size: 18px;
+  padding-bottom: 15px;
+  line-height: 25px;
+  strong {
+    color: #637299;
+  }
+  i {
+    font-size: 12px;
+    font-style: normal;
+  }
+}
+
+:host::ng-deep {
+  .text-agreed {
+    max-width: 523px;
+    padding-top: 15px;
+
+    .text {
+      font-size: 12px;
+      strong {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+mat-checkbox {
+  display: block;
+  text-align: right;
+}
+
+.req {
+  max-width: 523px;
+}
+
+:host::ng-deep {
+  .additional {
+    padding-top: 15px;
+    .line {
+      display: flex;
+      padding: 10px 0;
+      font-size: 18px;
+      color: #637299;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      strong {
+        margin-left: auto;
+        color: #000;
+      }
+    }
+    .pre {
+      font-size: 12px;
+      padding-top: 10px;
+      strong {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+

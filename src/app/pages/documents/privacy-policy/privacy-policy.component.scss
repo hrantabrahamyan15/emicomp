@@ -1,0 +1,15 @@
+:host::ng-deep {
+  .c-form {
+    div {
+      padding-bottom: 15px;
+      span {
+        font-size: 20px;
+        display: block;
+        padding-bottom: 8px;
+      }
+      p {
+        color: #565656;
+      }
+    }
+  }
+}

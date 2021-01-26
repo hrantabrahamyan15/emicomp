@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="logo">
+        <img src="/assets/img/logo_big.svg" alt="">
+        <div class="head">
+          Emicomp. Yield Farming
+        </div>
+        <p>{{ 'first_screen.slog' | translate}}</p>
+        <div class="bt">
+          <button class="bt_custom white" (click)="callModalHowItWorks()">{{'header.how_it_works' | translate}}</button>
+          <a class="bt_custom orange" routerLink="/account" (click)="goToAccount()">{{'header.dashboard' | translate}}</a>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="pre_title">
+            {{'first_screen.why_boster' | translate}}
+          </div>
+          <div class="table light_grey">
+            <ul>
+              <li>
+                <div>
+                  <img src="/assets/img/why_list/ic1.svg" alt="">
+                  <i>Easy Launch</i>
+                </div>
+                <span>{{'first_screen.why1' | translate}}</span>
+              </li>
+              <li>
+                <div>
+                  <img src="/assets/img/why_list/ic2.svg" alt="">
+                  <i>Fix Profits</i>
+                </div>
+                <span>{{'first_screen.why2' | translate}}</span>
+              </li>
+              <li>
+                <div>
+                  <img src="/assets/img/why_list/ic3.svg" alt="">
+                  <i>
+                    Smart Contract
+                  </i>
+                </div>
+                <span>{{'first_screen.why3' | translate}}</span>
+              </li>
+              <li>
+                <div>
+                  <img src="/assets/img/why_list/ic4.svg" alt="">
+                  <i>
+                    Automatic
+                  </i>
+                </div>
+                <span>{{'first_screen.why4' | translate}}</span>
+              </li>
+              <li>
+                <div>
+                  <img src="/assets/img/why_list/ic5.svg" alt="">
+                  <i>
+                    Instant withdrawals
+                  </i>
+                </div>
+                <span>{{'first_screen.why5' | translate}}</span>
+              </li>
+              <li>
+                <div>
+                  <img src="/assets/img/why_list/ic6.svg" alt="">
+                  <i>
+                    Cloud Service
+                  </i>
+                </div>
+                <span>{{'first_screen.why6' | translate}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #howItworksDialogTemplate>
+  <h2 mat-dialog-title [innerHTML]="'header.how_it_works' | translate"></h2>
+  <mat-dialog-content>
+    <div class="how_it_works_text" [innerHTML]="'company.how_works' | translate"></div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>{{'close' | translate}}</button>
+  </mat-dialog-actions>
+</ng-template>

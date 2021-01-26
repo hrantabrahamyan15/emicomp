@@ -1,0 +1,233 @@
+:host {
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 30px 0;
+}
+
+
+:host::ng-deep {
+  .mat-tab-labels {
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+  .mat-tab-label {
+    height: auto;
+    opacity: 1;
+  }
+  .mat-tab-label-content {
+    padding: 10px 20px;
+    font-size: 30px;
+    line-height: 44px;
+    color: #000;
+    border-radius: 50px;
+  }
+  .mat-tab-label-active {
+    .mat-tab-label-content {
+      font-size: 30px;
+      line-height: 44px;
+      color: #000;
+    }
+  }
+  mat-ink-bar {
+    display: none;
+  }
+}
+
+.tab_box {
+  overflow: hidden;
+  padding-top: 30px;
+}
+
+.title {
+  padding-bottom: 30px;
+}
+
+.video {
+  height: 296px;
+  position: relative;
+  background: #F7F8FA;
+  background-clip: padding-box; /* !importanté */
+  border: solid 3px transparent; /* !importanté */
+  border-radius: 1em;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -3px; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    background: linear-gradient(350deg, #213F9A 0%, #0062B0 33.33%, #0BAE4D 68.75%, #6CBD45 99.99%);
+  }
+  .video_bt {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    justify-content: center;
+    span {
+      padding-left: 20px;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
+.content_box {
+  .text {
+    font-size: 18px;
+    line-height: 30px;
+    //padding-top: 50px;
+    text-align: justify;
+  }
+}
+
+
+.button_box {
+  padding-top: 50px;
+}
+
+.list {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  .item {
+    width: 48%;
+    margin-bottom: 30px;
+  }
+  .text {
+    font-size: 12px;
+    line-height: 15px;
+    min-height: 63px;
+    text-align: justify;
+  }
+  .logo {
+    min-height: 120px;
+    margin-bottom: 20px;
+  }
+  .smi {
+    font-size: 12px;
+    line-height: 15px;
+    a {
+      margin-right: 5px;
+      color: #0162B1;
+    }
+  }
+}
+
+
+:host::ng-deep {
+  .team {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    li {
+      width: 17%;
+      display: flex;
+      flex-flow: column;
+    }
+    img {
+      width: 130px;
+      height: 130px;
+      border-radius: 200px;
+      display: block;
+      margin: auto;
+    }
+    .head {
+      text-align: center;
+      padding-top: 10px;
+      height: 75px;
+      strong {
+        display: block;
+        padding-bottom: 5px;
+      }
+      span {
+        color: #1e419b;
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+    }
+    .text {
+      padding-top: 7px;
+      font-size: 13px;
+      text-align: justify;
+      display: flex;
+      flex-flow: column;
+      padding-bottom: 10px;
+      flex: 1;
+      a {
+        margin-top: auto;
+        top: 10px;
+        position: relative;
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+
+
+
+@media all and (max-width: 1199px) {
+  .content_box {
+    margin-bottom: 60px;
+  }
+  .button_box {
+    text-align: center;
+  }
+
+
+  .team {
+    flex-wrap: wrap;
+    li {
+      width: 49%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .team {
+    flex-wrap: wrap;
+    flex-flow: column;
+    .head {
+      height: auto;
+    }
+    li {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  :host::ng-deep {
+    .mat-tab-label-content {
+      padding: 5px 16px;
+      font-size: 21px;
+      line-height: 34px;
+    }
+
+    .mat-tab-label {
+      padding: 0 13px;
+    }
+  }
+
+  .list {
+    flex-flow: column;
+    .item {
+      width: 100%;
+    }
+    .logo {
+      min-height: auto;
+    }
+    .text {
+      min-height: auto;
+      padding-bottom: 10px;
+    }
+  }
+}
+

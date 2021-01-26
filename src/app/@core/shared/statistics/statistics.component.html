@@ -1,0 +1,37 @@
+<div class=" statistic_box">
+
+    <div class="stat">
+      <div class="item ico">
+        <div>
+          <span class="text_light_grey">{{'first_screen.balance' | translate}}</span>
+          <a href="https://compound.finance/governance/address/0x0BCbAb2FeCC30B7341132B4Ebb36d352E035f1bD" target="_blank">
+            <strong><mat-icon>account_balance</mat-icon>{{(stats?.cethSupplay * cEthRate) + (stats?.cdaiSupplay * cDaiRate) + (stats?.cusdcSupplay * cUsdcRate) | number: '.0-1'}} $</strong>
+          </a>
+        </div>
+      </div>
+      <div class="item ico">
+        <div>
+          <span class="text_light_grey">{{'first_screen.users' | translate}}</span>
+          <strong><mat-icon>people_alt</mat-icon>{{stats?.totalUsers | number}}</strong>
+        </div>
+      </div>
+      <div class="item ico кув">
+        <div>
+          <span class="text_light_grey">{{'first_screen.profit' | translate}}</span>
+          <a href="https://compound.finance/governance/address/0x0BCbAb2FeCC30B7341132B4Ebb36d352E035f1bD" target="_blank">
+            <strong><mat-icon>monetization_on</mat-icon>{{realProfit | number : '.1-2'}} $</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="item ico">
+        <div class="menu">
+          <a mat-icon-button [matMenuTriggerFor]="menuAccount">{{ 'first_screen.warranty' | translate }}<mat-icon>arrow_drop_down</mat-icon></a>
+          <mat-menu #menuAccount="matMenu">
+            <a mat-menu-item class="view" href="https://etherscan.io/address/0x0bcbab2fecc30b7341132b4ebb36d352e035f1bd" target="_blank">{{ 'first_screen.view_compound' | translate }}</a>
+            <a mat-menu-item class="view" href="https://compound.finance/governance/address/0x0BCbAb2FeCC30B7341132B4Ebb36d352E035f1bD" target="_blank">{{ 'first_screen.view_profit_compound' | translate }}</a>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>

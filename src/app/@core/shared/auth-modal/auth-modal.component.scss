@@ -1,0 +1,28 @@
+.box {
+  width: 100%;
+  padding: 20px 0 0 0;
+
+  .input-group {
+    width: 100%;
+    margin-bottom: 20px;
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    .input-group-append {
+      margin: 0 auto;
+
+      a {
+        &:hover {
+          color: #1e419b;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .green_button_gradient {
+    padding: 10px 20px;
+  }
+}

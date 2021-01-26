@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="row statistic_box">
+    <div class="col-xl-12">
+      <div class="main_title">
+        {{'INDEFIECO Explained' | translate}}
+      </div>
+    </div>
+    <div class="col-xl-12">
+      <div class="plate_box row">
+        <div class="col-xl-6">
+          <div class="stat">
+            <div class="title ibm_font">
+              {{'first_screen.already_profit' | translate}}
+            </div>
+            <div class="item ico">
+              <img src="/assets/img/balance2.svg" alt="">
+              <div>
+                <span>{{'first_screen.balance' | translate}}</span>
+                <strong >{{(stats?.cethSupplay * cEthRate) + (stats?.cdaiSupplay * cDaiRate) + (stats?.cusdcSupplay * cUsdcRate) | number: '.0-1'}} $</strong>
+              </div>
+            </div>
+            <div class="item ico">
+              <img src="/assets/img/users2.svg" alt="">
+              <div>
+                <span>{{'first_screen.users' | translate}}</span>
+                <strong >{{stats?.totalUsers | number}}</strong>
+              </div>
+            </div>
+            <div class="item ico">
+              <img src="/assets/img/profit2.svg" alt="">
+              <div>
+                <span>{{'first_screen.profit' | translate}}</span>
+                <a href="https://compound.finance/governance/address/0x0BCbAb2FeCC30B7341132B4Ebb36d352E035f1bD" target="_blank">
+                  <strong>
+                    {{stats?.totalProfit | number : '0.3'}} $
+                  </strong>
+                </a>
+              </div>
+            </div>
+
+              <button (click)="goToAccount()" class="bt_custom orange text-uppercase">
+                {{'first_screen.open_deposit' | translate}}
+              </button>
+
+          </div>
+        </div>
+        <div class="col-xl-6" style="display: flex; flex-flow: column;">
+          <div class="slog ibm_font">
+            <div class="title">
+              {{'how_works.baks_deposit' | translate}}
+            </div>
+            <p style="font-weight: normal;" [innerHTML]="textWithApy"></p>
+          </div>
+          <div class="safety">
+            <div class="text" [innerHTML]="'how_works.safety' | translate"></div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="how_works">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="main_title" #howitwork>
+          {{'how_works.how' | translate}}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="list">
+          <div class="item">
+            <div class="img">
+              <img src="/assets/img/uniswap.svg" alt="">
+            </div>
+            <div class="text">
+              {{'how_works.we_use' | translate}}
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="/assets/img/compound.svg" alt="">
+            </div>
+            <div class="text">
+              {{'how_works.auto' | translate}}
+            </div>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="/assets/img/logo_w.svg" alt="">
+            </div>
+            <div class="text">
+              {{'how_works.approach' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="after" >
+          <div class="text" [innerHTML]="'how_works.service_one' | translate">
+
+          </div>
+          <div class="text" [innerHTML]="'how_works.service_one2' | translate">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+form {
+  padding-top: 5px;
+
+  .line {
+    display: flex;
+    padding: 10px 0 20px 0;
+    font-size: 18px;
+    color: #637299;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    strong {
+      margin-left: auto;
+      color: #000;
+    }
+  }
+
+  .description {
+    width: 100%;
+    color: #000;
+    font-size: 18px;
+    padding: 20px 0 0 0;
+
+    table {
+      width: 100%;
+      margin-bottom: 15px;
+      text-align: center;
+
+      tr {
+        th {
+          padding: 10px;
+          text-align: right;
+          width: 50%;
+          font-weight: 500;
+
+          &:first-child {
+            text-align: left;
+          }
+        }
+
+        td {
+          padding: 10px;
+          text-align: right;
+          width: 50%;
+          color: #637299;
+
+          &:first-child {
+            text-align: left;
+          }
+
+          mat-spinner {
+            margin: auto;
+          }
+        }
+      }
+    }
+
+    button {
+      padding: 19px;
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+
+      img {
+        width: 25px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+
+.input-group {
+  padding-bottom: 15px;
+}
+
+:host::ng-deep {
+
+  .mat-form-field {
+    width: 100%;
+
+    .mat-form-field-suffix {
+      margin: auto 0 auto 0;
+      padding: 0 0 0 10px;
+
+      a {
+        color: #141717;
+        cursor: pointer;
+        background-color: #FFD541;
+        padding: 15px 20px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .mat-spinner{
+    svg {
+      circle {
+        stroke: #FFD541;
+      }
+    }
+  }
+
+  .mat-progress-bar {
+    .mat-progress-bar-background {
+      fill: #ffd54100;
+    }
+
+    .mat-progress-bar-buffer {
+      background-color: #ffd5414d;
+    }
+
+    .mat-progress-bar-fill {
+      &:after {
+        background-color: #FFD541;
+      }
+    }
+  }
+}

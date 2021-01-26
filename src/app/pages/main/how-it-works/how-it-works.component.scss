@@ -1,0 +1,254 @@
+:host {
+  display: block;
+  width: 100%;
+  padding: 130px 0 0;
+  background: url("/assets/img/how_works_bg.svg") no-repeat center 111px #fbfbfb;
+}
+
+.slog {
+  color: #fff;
+  padding: 32px;
+  background: url("/assets/img/slog_bg.svg") no-repeat right bottom,
+  linear-gradient(98.68deg, #11B382 0%, #03835C 100%);
+  filter: drop-shadow(0px 10px 20px rgba(25, 131, 99, 0.3));
+  border-radius: 8px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 32px;
+
+  .title {
+    color: #fff;
+    padding-bottom: 20px;
+  }
+
+}
+.safety {
+  background: url("/assets/img/maximization.svg") no-repeat right 24px center #FFFFFF;
+  /* Lines / Light */
+  border: 2px solid #EAEEEE;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex: 1;
+  font-size: 20px;
+  line-height: 32px;
+  padding: 40px 30px;
+  /* or 160% */
+  /* Text / Grey1 */
+  color: #89919A;
+  .text {
+    padding-right: 130px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .title {
+    color: #24272C;
+    padding-bottom: 20px;
+  }
+  img {
+    margin-right: 39px;
+  }
+}
+
+
+:host::ng-deep {
+  .safety {
+    .title {
+      padding-bottom: 20px;
+    }
+  }
+
+}
+
+
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 60px;
+  position: relative;
+  z-index: 1;
+  .item {
+    width: 31.5%;
+    background: #FFFFFF;
+    box-shadow: 0 9px 25px rgba(73, 73, 73, 0.07);
+    border-radius: 8px;
+    padding: 40px 27px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+
+    &:after {
+      content: '';
+      opacity: 0.15;
+      box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.3), 0px 21px 20px -15px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      height: 100%;
+      z-index: -2;
+      top: 10px;
+    }
+  }
+  .img {
+    margin-bottom: 30px;
+  }
+  .text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 23px;
+    /* or 164% */
+    /* Text / Grey1 */
+
+    color: #89919A;
+  }
+}
+
+.after {
+  padding-top: 70px;
+  display: flex;
+  font-family: IBM Plex Sans;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  color: #555959;
+  justify-content: space-around;
+  .text {
+    width: 40%;
+  }
+}
+
+.plate_box {
+  padding-top: 60px;
+  .col {
+    height: 100%;
+  }
+}
+
+.stat {
+  background: #FFFFFF;
+  /* Features / Shadow */
+
+  box-shadow: 0 9px 25px rgba(73, 73, 73, 0.07);
+  border-radius: 4px;
+  height: 100%;
+  padding: 40px;
+  .title {
+    padding-bottom: 20px;
+  }
+  .item {
+    border-bottom: 1px solid #EAEEEE;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    img {
+      margin-right: 20px;
+    }
+    > div {
+      display: flex;
+      flex: 1;
+    }
+    span {
+      font-family: IBM Plex Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+
+      /* Text / Grey1 */
+
+      color: #89919A;
+    }
+    strong, a {
+      margin-left: auto;
+      font-family: IBM Plex Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 26px;
+      /* identical to box height */
+
+      display: flex;
+      align-items: center;
+      text-align: right;
+
+      /* Text / Dark1 */
+
+      color: #24272C;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  .bt_custom {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+:host::ng-deep {
+  .title {
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+.how_works {
+  background: url(/assets/img/first_screen_bg_second.svg) no-repeat right 0 center #f4f6f6;
+  padding: 137px 0 100px;
+  margin-top: 100px;
+}
+
+
+
+@media all and (max-width: 1199px) {
+  .slog {
+    padding: 20px;
+  }
+  .safety {
+    margin-top: 30px;
+  }
+  .slog  {
+    margin-top: 30px;
+  }
+}
+
+
+@media all and (max-width: 991px) {
+  .list {
+    flex-flow: column;
+    .item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+@media all and (max-width: 575px) {
+  .stat {
+    .item {
+      flex-flow: column;
+      img {
+        margin-right: 0;
+      }
+      > div {
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+      }
+      strong {
+        margin-left: 0;
+      }
+    }
+  }
+}

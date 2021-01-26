@@ -1,0 +1,11 @@
+<button [matMenuTriggerFor]="menu">
+<!--  <img width="20" src="{{currentLang}}" alt="">-->
+  {{currentLang}} / USD
+</button>
+<mat-menu #menu="matMenu" class="languages-menu">
+  <ul>
+    <li mat-menu-item  (click)="changeLang(lang.title); currentLang = lang.name;" *ngFor="let lang of langArr">
+        {{lang.name}}
+    </li>
+  </ul>
+</mat-menu>
